@@ -14,11 +14,13 @@ import com.zzw.service.constans.ResourcePath;
 @Path(ResourcePath.USER)
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
+
 	private CamelContext camelContext;
-	
+
 	public UserResource(CamelContext camelContext) {
 		this.camelContext = camelContext;
 	}
+
 	@POST
 	@Path("/search")
 	public Response search(User user) {
