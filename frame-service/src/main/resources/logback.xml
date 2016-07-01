@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- log formatting : 18:16:26.886 [main] TRACE com.**.main [17] ( %M [%L] method line )-->
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M [%L] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>/tmp/log/info.log</file>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="errorFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/tmp/demoslf4j/error.log</file>
+        <maxHistory>30</maxHistory>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>/tmp/log/error-%i.log.zip</fileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+      <appender name="resourceFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/tmp/log/resource.log</file>
+        <maxHistory>30</maxHistory>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>/tmp/log/resource-%i.log.zip</fileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- addtivity : default is true, send log information into parent -->
+    <logger name="com.zzw.service" level="error" additivity="false">
+        <appender-ref ref="errorFileAppender" />
+    </logger>
+    
+    <logger name="com.zzw.service.resources" level="info" additivity="false">
+        <appender-ref ref="resourceFileAppender" />
+    </logger>
+    
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="fileAppender" />
+    </root>
+</configuration>

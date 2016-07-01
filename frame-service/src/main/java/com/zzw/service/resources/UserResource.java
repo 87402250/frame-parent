@@ -1,4 +1,4 @@
-package com.zzw.service.service.resources;
+package com.zzw.service.resources;
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 import org.apache.camel.CamelContext;
 
 import com.zzw.service.api.User;
-import com.zzw.service.service.constans.ResourcePath;
+import com.zzw.service.constans.ResourcePath;
 
 @Path(ResourcePath.USER)
 @Produces(MediaType.APPLICATION_JSON)

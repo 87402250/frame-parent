@@ -1,4 +1,4 @@
-package com.zzw.service.service.camel;
+package com.zzw.service.camel;
 
 import org.apache.camel.builder.RouteBuilder;
 

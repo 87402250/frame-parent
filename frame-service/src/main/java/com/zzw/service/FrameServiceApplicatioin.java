@@ -1,11 +1,11 @@
-package com.zzw.service.service;
+package com.zzw.service;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
 
-import com.zzw.service.service.camel.UserRouteBuilder;
-import com.zzw.service.service.configurations.Configurations;
-import com.zzw.service.service.resources.UserResource;
+import com.zzw.service.camel.UserRouteBuilder;
+import com.zzw.service.configurations.Configurations;
+import com.zzw.service.resources.UserResource;
 
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;

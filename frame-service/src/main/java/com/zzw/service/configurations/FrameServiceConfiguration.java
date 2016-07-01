@@ -1,4 +1,4 @@
-package com.zzw.service.service.configurations;
+package com.zzw.service.configurations;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

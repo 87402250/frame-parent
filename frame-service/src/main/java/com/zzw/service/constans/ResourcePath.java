@@ -1,4 +1,4 @@
-package com.zzw.service.service.constans;
+package com.zzw.service.constans;
 
 public class ResourcePath {
 

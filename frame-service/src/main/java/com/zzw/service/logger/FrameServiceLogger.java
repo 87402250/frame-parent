@@ -1,8 +1,8 @@
-package com.zzw.service.service.logger;
+package com.zzw.service.logger;
 
 import org.slf4j.LoggerFactory;
 
-import com.zzw.service.service.configurations.Configurations;
+import com.zzw.service.configurations.Configurations;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
