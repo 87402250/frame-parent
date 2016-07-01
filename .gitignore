@@ -1,12 +1,29 @@
-    # filter eclipse file
-    *.classpath
-    *.project
 
-    # filter eclipse dir
-    /.settings/
+target
+bin
+.metadata
+*.class
+RemoteSystemsTempFiles
+.gitignore.swp
+.settings
 
-    # filter idea file
-    *.iml
+frame-service/.classpath
+frame-service/.project
 
-    #filter idea dir
-    /.idea/
+frame-commons/.classpath
+frame-commons/.project
+
+frame-api/.classpath
+frame-api/.project
+
+.project
+.idea
+frame-api/.idea
+frame-commons/.idea
+frame-service/.idea
+*.iml
+frame-service/.checkstyle
+.classpath
+frame-api/.gitignore
+frame-commons/.gitignore
+frame-service/.gitignore
