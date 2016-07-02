@@ -5,6 +5,7 @@ import org.apache.camel.impl.DefaultCamelContext;
 
 import com.zzw.service.camel.UserRouteBuilder;
 import com.zzw.service.configurations.Configurations;
+import com.zzw.service.logger.FrameServiceLogger;
 import com.zzw.service.resources.UserResource;
 
 import io.dropwizard.Application;
@@ -22,7 +23,7 @@ public class FrameServiceApplicatioin extends Application<Configurations> {
 		this.environment = environment;
 
 		Configurations.setInstance(configurations);
-		registerResources();
+		registerService();
 		startRouteBuilder();
 
 	}
@@ -32,8 +33,11 @@ public class FrameServiceApplicatioin extends Application<Configurations> {
 		camelContext.start();
 	}
 
-	public void registerResources() {
+	public void registerService() {
+		// register resource
 		environment.jersey().register(new UserResource(camelContext));
+		// register logger info
+		FrameServiceLogger.initialize(environment);
 	}
 
 	public static void main(String[] args) throws Exception {

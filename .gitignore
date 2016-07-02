@@ -27,3 +27,4 @@ frame-service/.checkstyle
 frame-api/.gitignore
 frame-commons/.gitignore
 frame-service/.gitignore
+/classes/
